@@ -2,7 +2,7 @@ version: '3.4'
 
 services:
   nodepm2:
-    # image: nodepm2
+    image: nodepm2raccoon
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -10,3 +10,5 @@ services:
       NODE_ENV: production
     ports:
       - 4500:4500
+    volumes:
+      - .:/usr/src/app
