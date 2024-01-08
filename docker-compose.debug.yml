@@ -1,0 +1,14 @@
+version: '3.4'
+
+services:
+  nodepm2:
+    image: nodepm2
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 4500:4500
+      - 9229:9229
+    command: ["node", "--inspect=0.0.0.0:9229", "index.js"]
